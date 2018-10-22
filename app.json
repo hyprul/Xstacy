@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Ecstacy",
+    "description": "This is the best app of all time.",
+    "slug": "Ecstacy",
+    "privacy": "public",
+    "sdkVersion": "30.0.0",
+    "platforms": ["ios", "android"],
+    "facebookDisplayName": "Ecstacy",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "bundleIdentifier": "com.ecstacy.ecstacy",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Allow Ecstacy to use your location in order to find new people to hang out with in your area"
+      }
+    },
+    "android": {
+      "package": "com.ecstacy.ecstacy"
+    }
+  }
+}
