@@ -18,24 +18,31 @@ var styles = StyleSheet.create({
 		backgroundColor: "#00171F"
 	},
 	color: {
-		color: "#1C3041"
+		color: "#fff"
 	},
 	center: {
 		alignItems: "center",
 		justifyContent: "center",
 		textAlign: "center"
 	},
-	img: {
+	avatarimg:{
 		width: 90,
 		height: 90,
 		borderRadius: 45,
 		margin: 10,
 		backgroundColor: "transparent"
 	},
+	img: {
+		width: 120,
+		height: 120,
+		borderRadius: 2,
+		margin: 2,
+		backgroundColor: "transparent"
+	},
 	imgRow: {
 		flexWrap: "wrap",
 		flexDirection: "row",
-		padding: 15
+		padding: 1
 	},
 	textInput: {
 		width: deviceWidth * 0.9,
@@ -44,6 +51,10 @@ var styles = StyleSheet.create({
 		height: 50,
 		fontSize: 15,
 		color: "#AACCFF"
+	},
+	headName: {
+		fontSize: 22,
+		fontWeight: "bold"
 	},
 	bold: {
 		padding: 10,
@@ -88,14 +99,18 @@ var styles = StyleSheet.create({
 		marginTop: 20
 	},
 	heart: {
-		position: 'absolute',
+		position: "absolute",
 		top: "85%",
-		right:"15%"
+		right: "15%"
 	},
-		noheart: {
-		position: 'absolute',
+	noheart: {
+		position: "absolute",
 		top: "85%",
 		left: "15%"
+	},
+	gallery: {
+		position: "absolute",
+		top: "30%"
 	}
 });
 

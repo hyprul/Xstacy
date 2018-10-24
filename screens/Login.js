@@ -144,8 +144,6 @@ const styles = StyleSheet.create({
     top: "0%",
     right: "65%",
     justifyContent: 'center',
-
-
   },
     glogo: {
     position: "absolute",

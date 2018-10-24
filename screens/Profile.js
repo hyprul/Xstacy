@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles";
 import { connect } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
-import { SocialIcon } from 'react-native-elements'
+import { SocialIcon } from "react-native-elements";
 import {
   uploadImages,
   deleteImage,
@@ -23,6 +23,7 @@ import {
 } from "react-native";
 
 import { Header, Avatar, Icon } from "react-native-elements";
+import { RkGallery, RkButton, RkTheme } from "react-native-ui-kitten";
 
 class Profile extends React.Component {
   async componentWillMount() {
@@ -41,6 +42,26 @@ class Profile extends React.Component {
   addImage() {
     this.props.dispatch(uploadImages(this.props.user.images));
   }
+
+  galleryArray() {
+    return this.props.user.images.map(url => ({ uri: url }));
+  }
+
+  galleryImage() {
+    return <RkGalleryImage source={{ uri: this.props.user.images[0] }} />;
+  }
+
+  renderGalleryHeader = onRequestClose => (
+    <View>
+      <RkButton onPress={onRequestClose} rkType="accent">
+        Back
+      </RkButton>
+    </View>
+  );
+
+  onGridItemClick = (item, index) => {
+    // whatever
+  };
 
   render() {
     return (
@@ -87,15 +108,13 @@ class Profile extends React.Component {
 
         <ScrollView>
           <View style={[styles.container, styles.center]}>
-            <View style={styles.container}>
-              <Image
-                style={styles.img}
-                source={{ uri: this.props.user.images[0] }}
-              />
-              <Text style={[styles.center, styles.bold, { color: "#fff" }]}>
-                {this.props.user.name}
-              </Text>
-            </View>
+            <Image
+              style={styles.avatarimg}
+              source={{ uri: this.props.user.images[0] }}
+            />
+            <Text style={[styles.center, styles.headName, { color: "#fff" }]}>
+              {this.props.user.name}
+            </Text>
             <View style={styles.imgRow}>
               {this.props.user.images.map((uri, key) => {
                 return (
@@ -119,15 +138,10 @@ class Profile extends React.Component {
               </TouchableOpacity>
             </View>
           </View>
-          <TouchableOpacity onPress={() => this.props.dispatch(logout())}>
-            <Text style={styles.button}>Logout</Text>
-          </TouchableOpacity>
         </ScrollView>
+
         <Text style={[styles.bold, { color: "#fff" }]}>About</Text>
-        <KeyboardAvoidingView
-          behavior="padding"
-          enabled
-        >
+        <KeyboardAvoidingView behavior="padding" enabled>
           <TextInput
             style={styles.textInput}
             multiline={true}
@@ -136,10 +150,25 @@ class Profile extends React.Component {
             value={this.props.user.aboutMe}
           />
         </KeyboardAvoidingView>
+
+        <TouchableOpacity onPress={() => this.props.dispatch(logout())}>
+          <Text style={styles.button}>Logout</Text>
+        </TouchableOpacity>
       </ImageBackground>
     );
   }
 }
+
+let accent = "#ed1c4d";
+
+RkTheme.setType("RkButton", "accent", {
+  container: {
+    backgroundColor: accent
+  },
+  content: {
+    color: "white"
+  }
+});
 
 function mapStateToProps(state) {
   return {

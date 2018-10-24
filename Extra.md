@@ -41,3 +41,49 @@ const styles = {
 };
 
 export default Login;
+
+
+
+MAPPPPPP
+
+      <MapView
+        provider={PROVIDER_GOOGLE}
+        style={styles.container}
+        customMapStyle={MapStyles}
+        showsUserLocation={true}
+        region={this.state.region}
+      >
+        <MapView.Marker coordinate={matchLoc}>
+          <Image
+            style={styles.marker}
+            source={require("../assets/tinder-marker.png")}
+          />
+        </MapView.Marker>
+      </MapView>
+
+
+
+
+PROFILE ROW IMAGES
+            <View style={styles.imgRow}>
+              {this.props.user.images.map((uri, key) => {
+                return (
+                  <TouchableOpacity
+                    key={key}
+                    onPress={this.deleteImage.bind({ self: this, key: key })}
+                  >
+                    <Image style={styles.img} source={{ uri: uri }} />
+                  </TouchableOpacity>
+                );
+              })}
+              <TouchableOpacity
+                style={[
+                  styles.img,
+                  styles.center,
+                  { backgroundColor: "transparent" }
+                ]}
+                onPress={this.addImage.bind(this)}
+              >
+                <Ionicons name="ios-add" size={75} style={styles.color} />
+              </TouchableOpacity>
+            </View>
