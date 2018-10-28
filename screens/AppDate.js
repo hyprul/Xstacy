@@ -135,7 +135,7 @@ export default class AppDate extends Component {
 			});
 		});
 	}
-	
+
 	componentWillUnmount() {
 		navigator.geolocation.clearWatch(this.watchID);
 	}

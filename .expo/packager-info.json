@@ -1,9 +1,9 @@
 {
-  "expoServerPort": 19000,
+  "expoServerPort": null,
   "expoServerNgrokUrl": "https://pg-xh2.hyprul.tinder.exp.direct",
   "packagerNgrokUrl": "https://packager.pg-xh2.hyprul.tinder.exp.direct",
-  "ngrokPid": 67438,
+  "ngrokPid": 82564,
   "devToolsPort": 19002,
-  "packagerPort": 19003,
-  "packagerPid": 67423
+  "packagerPort": null,
+  "packagerPid": null
 }
